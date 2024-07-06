@@ -1,0 +1,105 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important; /* Color de texto blanco */
+    font-family: Arial, sans-serif !important;
+}
+
+.container {
+    min-height: 100%; /* Altura mínima del 100% */
+    position: relative;
+    padding-bottom: 50px; /* Espacio adicional en la parte inferior para el footer */
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Anchura completa */
+    height: 50px; /* Altura del footer */
+    background-color: #23272a; /* Un poco más oscuro que el fondo principal para diferenciar el footer */
+    color: #7289da; /* Usando el color blurple para mantener la coherencia */
+    text-align: center; /* Centrar el texto del footer */
+    line-height: 50px; /* Alineación vertical del texto en el footer */
+}
+
+h1 {
+    color: #7289da !important; /* Color blurple de Discord */
+}
+
+.btn-primary {
+    background-color: #7289da !important; /* Color blurple de Discord */
+    border-color: #7289da !important;
+    color: #ffffff !important; /* Texto blanco */
+}
+
+.btn-primary:hover {
+    background-color: #5b6eae !important; /* Blurple más oscuro al pasar el ratón */
+    border-color: #5b6eae !important;
+}
+
+.form-control {
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important; /* Texto blanco */
+    border: 1px solid #7289da !important; /* Borde blurple de Discord */
+    box-shadow: 0 0 5px rgba(114, 137, 218, 0.5) !important; /* Sombra blurple para destacar */
+}
+
+.form-control::placeholder {
+    color: #b9bbbe !important; /* Color del texto del marcador de posición */
+}
+
+label {
+    color: #b9bbbe !important; /* Color del texto de las etiquetas */
+}
+
+.list-group-item {
+    background-color: #000000 !important; /* Fondo negro */
+    border: 1px solid #23272a !important; /* Color del borde de los elementos de la lista */
+    color: #ffffff !important; /* Texto blanco */
+}
+
+.list-group-item a {
+    color: #7289da !important; /* Color de los enlaces */
+}
+
+.list-group-item a:hover {
+    color: #5b6eae !important; /* Blurple más oscuro al pasar el ratón */
+}
+
+.risk {
+    cursor: pointer !important;
+    color: #ffffff !important; /* Texto blanco */
+}
+
+.risk:hover {
+    text-decoration: underline !important;
+}
+
+.card {
+    border: none !important;
+    border-radius: 10px !important;
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important; /* Texto blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important; /* Sombra para la tarjeta */
+}
+
+.card-header {
+    background-color: #000000 !important;
+    border-radius: 10px 10px 0 0 !important;
+    color: #ffffff !important;
+}
+
+.card-body {
+    border-radius: 0 0 10px 10px !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+hr.bg-light {
+    border-top: 1px solid #f8f9fa !important;
+}

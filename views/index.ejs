@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AMSolutions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <img src="/assets/logo.png" alt="AMSolutions Logo" class="mb-4" style="width: 300px; height: auto;">
+        <h1 class="text-center mb-4">AMSolutions</h1>
+        
+        <div class="text-center mb-4">
+            <label class="mr-2 text-light"><input type="radio" name="searchType" value="subdominios"> Subdominios</label>
+            <label class="mr-2 text-light"><input type="radio" name="searchType" value="correos"> Correos Electrónicos</label>
+            <label class="mr-2 text-light"><input type="radio" name="searchType" value="cuentas"> Cuentas</label>
+            <label class="mr-2 text-light"><input type="radio" name="searchType" value="host"> Host</label>
+            <label class="text-light"><input type="radio" name="searchType" value="serper"> Búsqueda Google</label>
+        </div>
+
+        <form id="subdominiosForm" action="/subdominios/buscar" method="post" class="text-center" style="display:none;">
+            <div class="form-group">
+                <input type="text" name="dominio" class="form-control" placeholder="Ingrese el dominio" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Subdominios</button>
+        </form>
+
+        <form id="correosForm" action="/correos/buscar" method="post" class="text-center" style="display:none;">
+            <div class="form-group">
+                <input type="text" name="dominio" class="form-control" placeholder="Ingrese el dominio" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Correos</button>
+        </form>
+
+        <form id="cuentasForm" action="/cuentas/buscar" method="post" class="text-center" style="display:none;">
+            <div class="form-group">
+                <input type="text" name="query" class="form-control" placeholder="Ingrese el nombre" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Cuentas</button>
+        </form>
+
+        <form id="hostForm" action="/host/buscar" method="post" class="text-center" style="display:none;">
+            <div class="form-group">
+                <input type="text" name="url" class="form-control" placeholder="Ingrese la URL" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Host</button>
+        </form>
+
+        <form id="serperForm" action="/buscar/serper" method="post" class="text-center" style="display:none;">
+            <div class="form-group">
+                <input type="text" name="query" class="form-control" placeholder="Ingrese el término de búsqueda" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar en Google</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="footer-text">© 2024 AMSolutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/scripts.js"></script>
+    <script>
+        document.querySelectorAll('input[name="searchType"]').forEach((elem) => {
+            elem.addEventListener("change", function(event) {
+                document.getElementById("subdominiosForm").style.display = "none";
+                document.getElementById("correosForm").style.display = "none";
+                document.getElementById("cuentasForm").style.display = "none";
+                document.getElementById("hostForm").style.display = "none";
+                document.getElementById("serperForm").style.display = "none";
+                
+                if (this.value === "subdominios") {
+                    document.getElementById("subdominiosForm").style.display = "block";
+                } else if (this.value === "correos") {
+                    document.getElementById("correosForm").style.display = "block";
+                } else if (this.value === "cuentas") {
+                    document.getElementById("cuentasForm").style.display = "block";
+                } else if (this.value === "host") {
+                    document.getElementById("hostForm").style.display = "block";
+                } else if (this.value === "serper") {
+                    document.getElementById("serperForm").style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
