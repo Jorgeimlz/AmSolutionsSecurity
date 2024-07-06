@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
-const verifyToken = require('./middlewares/authMiddleware'); // Importar el middleware de autenticación
+const verifyToken = require('./middlewares/authMiddleware');
 
 // Cargar variables de entorno
 dotenv.config();
@@ -54,18 +54,20 @@ const socialRoutes = require('./routes/socialRoutes');
 const hostRoutes = require('./routes/hostRoutes');
 const serperRoutes = require('./routes/serperRoutes');
 const authRoutes = require('./routes/authRoutes');
+const historialRoutes = require('./routes/historialRoutes');
 
 // Usar rutas
-app.use('/subdominios', subdomainRoutes);
-app.use('/correos', emailRoutes);
-app.use('/cuentas', socialRoutes);
-app.use('/host', hostRoutes);
-app.use('/buscar', serperRoutes);
+app.use('/subdominios', verifyToken, subdomainRoutes);
+app.use('/correos', verifyToken, emailRoutes);
+app.use('/cuentas', verifyToken, socialRoutes);
+app.use('/host', verifyToken, hostRoutes);
+app.use('/buscar', verifyToken, serperRoutes);
 app.use('/auth', authRoutes);
+app.use('/usuarios', verifyToken, historialRoutes);
 
 // Ruta principal
 app.get('/', (req, res) => {
-    res.redirect('/auth/login'); // Redirigir a la página de inicio de sesión
+    res.redirect('/auth/login');
 });
 
 // Rutas protegidas
