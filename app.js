@@ -52,7 +52,7 @@ const subdomainRoutes = require('./routes/subdomainRoutes');
 const emailRoutes = require('./routes/emailRoutes');
 const socialRoutes = require('./routes/socialRoutes');
 const hostRoutes = require('./routes/hostRoutes');
-const searchRoutes = require('./routes/searchRoutes');
+const serperRoutes = require('./routes/serperRoutes');
 const authRoutes = require('./routes/authRoutes');
 
 // Usar rutas
@@ -60,7 +60,7 @@ app.use('/subdominios', subdomainRoutes);
 app.use('/correos', emailRoutes);
 app.use('/cuentas', socialRoutes);
 app.use('/host', hostRoutes);
-app.use('/buscar', searchRoutes);
+app.use('/buscar', serperRoutes);
 app.use('/auth', authRoutes);
 
 // Ruta principal
