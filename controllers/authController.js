@@ -43,4 +43,9 @@ const verifyToken = (req, res, next) => {
     });
 };
 
-module.exports = { register, login, verifyToken };
+const logout = (req, res) => {
+    res.clearCookie('token');  // Elimina la cookie que contiene el token
+    res.redirect('/auth/login');  // Redirige al usuario a la página de inicio de sesión
+};
+
+module.exports = { register, login, verifyToken, logout };

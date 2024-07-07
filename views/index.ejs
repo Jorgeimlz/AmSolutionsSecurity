@@ -10,8 +10,12 @@
     <div class="container mt-5 text-center">
         <img src="/assets/logo.png" alt="AMSolutions Logo" class="mb-4" style="width: 300px; height: auto;">
         <h1 class="text-center mb-4">AMSolutions</h1>
+        <!-- Botón de cerrar sesión -->
+        <form action="/auth/logout" method="get">
+            <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+        </form>
         
-        <div class="text-center mb-4">
+        <div class="text-center mb-4 mt-4">
             <label class="mr-2 text-light"><input type="radio" name="searchType" value="subdominios"> Subdominios</label>
             <label class="mr-2 text-light"><input type="radio" name="searchType" value="correos"> Correos Electrónicos</label>
             <label class="mr-2 text-light"><input type="radio" name="searchType" value="cuentas"> Cuentas</label>
@@ -91,4 +95,5 @@
     </script>
 </body>
 </html>
+
 
